@@ -11,8 +11,24 @@ The project satisfies all assignment requirements including backend API, retriev
 
 ## Architecture Diagram
 
-+----------------------+ |        User          | |   (Web Browser)      | +----------+-----------+ | | Question v +----------------------+ |  Frontend (React)    | |  - Input Field       | |  - Chat Interface    | |  - sessionId (LS)    | +----------+-----------+ | | POST /api/chat v +----------------------+ |  Backend (FastAPI)   | |  - API Layer         | |  - Session Manager   | +----------+-----------+ | | Encode Query v +-------------------------------+ |  Embedding Model              | |  all-MiniLM-L6-v2             | |  (Sentence Transformers)      | +----------+--------------------+ | | Cosine Similarity v +-------------------------------+ |  Vector Store                 | |  vector_store.json            | |  (Text + Embeddings)          | +----------+--------------------+ | | Top-K Relevant Chunks v +-------------------------------+ |  Grounded Response Builder    | |  (Docs > Chat History)        | +----------+--------------------+ | v +----------------------+ |  Frontend Response   | |  Displayed to User   | +----------------------+
+```mermaid
+flowchart LR
+    U[User<br/>(Web Browser)]
+    F[Frontend<br/>React + Vite]
+    B[Backend API<br/>FastAPI]
+    E[Embedding Model<br/>all-MiniLM-L6-v2]
+    V[Vector Store<br/>vector_store.json]
+    R[Response Builder<br/>(Grounded Answer)]
 
+    U -->|Ask Question| F
+    F -->|POST /api/chat<br/>sessionId| B
+    B -->|Encode Query| E
+    E -->|Embedding Vector| B
+    B -->|Cosine Similarity| V
+    V -->|Top-K Relevant Chunks| B
+    B -->|Docs > Chat History| R
+    R -->|Final Answer| F
+    F -->|Display Response| U
 ---
 
 ## RAG Workflow Explanation
