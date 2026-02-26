@@ -13,6 +13,8 @@ The project satisfies all assignment requirements including backend API, retriev
 
 ## Architecture Diagram
 
+## Architecture Diagram
+
 ```mermaid
 flowchart LR
     U["User<br/>(Web Browser)"]
