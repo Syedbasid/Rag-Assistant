@@ -11,56 +11,41 @@ The project satisfies all assignment requirements including backend API, retriev
 
 ## Architecture Diagram
 
-+-----------------------+
-|        User           |
-|    (Web Browser)      |
-+-----------+-----------+
-            |
-            | Ask Question
-            v
-+-----------------------+
-|  Frontend (React)     |
-|  - Chat Interface     |
-|  - Input Field        |
-|  - sessionId (LS)     |
-+-----------+-----------+
-            |
-            | POST /api/chat
-            v
-+-----------------------+
-|  Backend (FastAPI)    |
-|  - Request Validation |
-|  - Session Handling   |
-+-----------+-----------+
-            |
-            | Encode Query
-            v
-+-----------------------+
-|  Embedding Model      |
-|  all-MiniLM-L6-v2     |
-+-----------+-----------+
-            |
-            | Cosine Similarity
-            v
-+-----------------------+
-|  Vector Store         |
-|  vector_store.json    |
-+-----------+-----------+
-            |
-            | Top-K Chunks
-            v
-+-----------------------+
-|  Grounded Response    |
-|  Builder              |
-| (Docs > History)      |
-+-----------+-----------+
-            |
-            | Answer
-            v
-+-----------------------+
-|  Frontend Display     |
-|  (User sees result)   |
-+-----------------------+
+User
+ |
+ | Ask Question
+ v
+Frontend (React + Vite)
+ - Chat UI
+ - Input Field
+ - Session ID (localStorage)
+ |
+ | POST /api/chat
+ v
+Backend API (FastAPI)
+ - Request Validation
+ - Error Handling
+ - Session Handling
+ |
+ | Encode Question
+ v
+Embedding Model
+ (SentenceTransformer: all-MiniLM-L6-v2)
+ |
+ | Vector Similarity Search
+ v
+Vector Store
+ (vector_store.json)
+ |
+ | Top-K Relevant Chunks
+ v
+Response Builder
+ - Uses retrieved documents
+ - Avoids hallucination
+ |
+ | Final Answer
+ v
+User
 
 ## RAG Workflow Explanation
 
