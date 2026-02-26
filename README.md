@@ -11,25 +11,26 @@ The project satisfies all assignment requirements including backend API, retriev
 
 ## Architecture Diagram
 
+## Architecture Diagram
+
 ```mermaid
 flowchart LR
-    U[User<br/>(Web Browser)]
-    F[Frontend<br/>React + Vite]
-    B[Backend API<br/>FastAPI]
-    E[Embedding Model<br/>all-MiniLM-L6-v2]
-    V[Vector Store<br/>vector_store.json]
-    R[Response Builder<br/>(Grounded Answer)]
+    U["User<br/>(Web Browser)"]
+    F["Frontend<br/>React + Vite"]
+    B["Backend API<br/>FastAPI"]
+    E["Embedding Model<br/>all-MiniLM-L6-v2"]
+    V["Vector Store<br/>vector_store.json"]
+    R["Grounded Response Builder"]
 
     U -->|Ask Question| F
     F -->|POST /api/chat<br/>sessionId| B
     B -->|Encode Query| E
     E -->|Embedding Vector| B
     B -->|Cosine Similarity| V
-    V -->|Top-K Relevant Chunks| B
+    V -->|Top-K Chunks| B
     B -->|Docs > Chat History| R
     R -->|Final Answer| F
     F -->|Display Response| U
----
 
 ## RAG Workflow Explanation
 
