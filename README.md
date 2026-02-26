@@ -11,28 +11,59 @@ The project satisfies all assignment requirements including backend API, retriev
 
 ## Architecture Diagram
 
-## Architecture Diagram
-
-## Architecture Diagram
-
-```mermaid
-flowchart LR
-    U["User<br/>(Web Browser)"]
-    F["Frontend<br/>React + Vite"]
-    B["Backend API<br/>FastAPI"]
-    E["Embedding Model<br/>all-MiniLM-L6-v2"]
-    V["Vector Store<br/>vector_store.json"]
-    R["Grounded Response Builder"]
-
-    U -->|Ask Question| F
-    F -->|POST /api/chat<br/>sessionId| B
-    B -->|Encode Query| E
-    E -->|Embedding Vector| B
-    B -->|Cosine Similarity| V
-    V -->|Top-K Chunks| B
-    B -->|Docs > Chat History| R
-    R -->|Final Answer| F
-    F -->|Display Response| U
++-----------------------+
+|        User           |
+|    (Web Browser)      |
++-----------+-----------+
+            |
+            | Question
+            v
++-----------------------+
+|  Frontend Application |
+|   (React + Vite)      |
+| - Chat Interface      |
+| - Input Field         |
+| - sessionId (LS)      |
++-----------+-----------+
+            |
+            | POST /api/chat
+            v
++-----------------------+
+|     Backend API       |
+|      (FastAPI)        |
+| - Request Validation  |
+| - Session Handling    |
++-----------+-----------+
+            |
+            | Encode Query
+            v
++-----------------------+
+|   Embedding Model     |
+| all-MiniLM-L6-v2      |
+| (SentenceTransformer) |
++-----------+-----------+
+            |
+            | Embedding Vector
+            v
++-----------------------+
+|     Vector Store      |
+|  vector_store.json    |
++-----------+-----------+
+            |
+            | Top-K Relevant Chunks
+            v
++-----------------------+
+|  Grounded Response    |
+|     Builder           |
+| (Docs > History)      |
++-----------+-----------+
+            |
+            | Answer
+            v
++-----------------------+
+| Frontend Display      |
+| (User sees response)  |
++-----------------------+
 
 ## RAG Workflow Explanation
 
