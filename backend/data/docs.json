@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "title": "Attendance Policy",
+    "content": "Students must maintain a minimum of 75 percent attendance in each course to be eligible for semester examinations. Attendance is recorded for every lecture, laboratory, and tutorial session. Students who fail to meet the attendance requirement may be detained unless valid medical or official documentation is provided."
+  },
+  {
+    "id": "2",
+    "title": "Examination Rules",
+    "content": "Students must carry a valid university identification card to the examination hall. Electronic devices including mobile phones, smart watches, and calculators are strictly prohibited unless explicitly permitted. Any form of malpractice during examinations may lead to cancellation of results or further disciplinary action."
+  },
+  {
+    "id": "3",
+    "title": "Grading System",
+    "content": "The university follows a credit-based grading system. Grades are awarded based on internal assessments and end-semester examinations. Each grade corresponds to a specific grade point which is used to calculate the Semester Grade Point Average and the Cumulative Grade Point Average."
+  },
+  {
+    "id": "4",
+    "title": "Revaluation and Rechecking",
+    "content": "Students who are not satisfied with their examination results may apply for revaluation or rechecking within ten days from the date of result publication. Revaluation involves reassessment of the answer script while rechecking is limited to verification of totaling errors. Fees paid for revaluation or rechecking are non-refundable."
+  },
+  {
+    "id": "5",
+    "title": "Leave and Absence Policy",
+    "content": "Students are required to inform the department in advance for any planned leave. Medical leave must be supported by a valid medical certificate issued by a registered medical practitioner. Prolonged absence without approval may result in loss of attendance or disciplinary action."
+  },
+  {
+    "id": "6",
+    "title": "Internal Assessment Policy",
+    "content": "Internal assessment marks are awarded based on assignments, quizzes, presentations, and mid-semester examinations. Students must complete all internal assessment components to be eligible for the final examination. No re-test is allowed for missed assessments without valid justification."
+  },
+  {
+    "id": "7",
+    "title": "Academic Integrity Policy",
+    "content": "The university enforces strict academic integrity standards. Plagiarism, copying assignments, cheating in examinations, or submitting work not authored by the student is considered academic misconduct. Confirmed violations may result in grade penalties, suspension, or expulsion."
+  },
+  {
+    "id": "8",
+    "title": "Course Registration Policy",
+    "content": "Students must register for courses at the beginning of each semester through the official university portal. Late registration is permitted only with departmental approval. Students are responsible for ensuring that course selections align with their approved curriculum."
+  },
+  {
+    "id": "9",
+    "title": "Promotion and Detention Rules",
+    "content": "Promotion to the next academic year is subject to meeting minimum attendance and academic performance requirements. Students who fail to clear multiple courses may be required to repeat the semester. Detention rules are determined by the academic council."
+  },
+  {
+    "id": "10",
+    "title": "Degree Completion Requirements",
+    "content": "To be eligible for degree completion, students must earn all required academic credits, pass all examinations, and clear any outstanding dues. The minimum and maximum duration for degree completion are defined by university regulations."
+  }
+]
