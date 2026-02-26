@@ -16,53 +16,50 @@ The project satisfies all assignment requirements including backend API, retriev
 |    (Web Browser)      |
 +-----------+-----------+
             |
-            | Question
+            | Ask Question
             v
 +-----------------------+
-|  Frontend Application |
-|   (React + Vite)      |
-| - Chat Interface      |
-| - Input Field         |
-| - sessionId (LS)      |
+|  Frontend (React)     |
+|  - Chat Interface     |
+|  - Input Field        |
+|  - sessionId (LS)     |
 +-----------+-----------+
             |
             | POST /api/chat
             v
 +-----------------------+
-|     Backend API       |
-|      (FastAPI)        |
-| - Request Validation  |
-| - Session Handling    |
+|  Backend (FastAPI)    |
+|  - Request Validation |
+|  - Session Handling   |
 +-----------+-----------+
             |
             | Encode Query
             v
 +-----------------------+
-|   Embedding Model     |
-| all-MiniLM-L6-v2      |
-| (SentenceTransformer) |
+|  Embedding Model      |
+|  all-MiniLM-L6-v2     |
 +-----------+-----------+
             |
-            | Embedding Vector
+            | Cosine Similarity
             v
 +-----------------------+
-|     Vector Store      |
+|  Vector Store         |
 |  vector_store.json    |
 +-----------+-----------+
             |
-            | Top-K Relevant Chunks
+            | Top-K Chunks
             v
 +-----------------------+
 |  Grounded Response    |
-|     Builder           |
+|  Builder              |
 | (Docs > History)      |
 +-----------+-----------+
             |
             | Answer
             v
 +-----------------------+
-| Frontend Display      |
-| (User sees response)  |
+|  Frontend Display     |
+|  (User sees result)   |
 +-----------------------+
 
 ## RAG Workflow Explanation
